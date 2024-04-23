@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4wcqq2mbic18"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_6oooa"]
+[ext_resource type="PackedScene" uid="uid://d4b828ww7tusw" path="res://scenes/player.tscn" id="2_21y34"]
+[ext_resource type="Texture2D" uid="uid://dirvrridkb7vq" path="res://icon.svg" id="3_kqwks"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ry6ev"]
+height = 564.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvqlj"]
+size = Vector2(933, 20)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_6oooa")
+
+[node name="Player" parent="." instance=ExtResource("2_21y34")]
+position = Vector2(154, 163)
+
+[node name="ground" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ground"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(79.5, 217.5)
+scale = Vector2(4.27344, 0.179688)
+texture = ExtResource("3_kqwks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
+position = Vector2(72, 216.5)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_ry6ev")
+
+[node name="Deathzone" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone"]
+position = Vector2(69, 421)
+shape = SubResource("RectangleShape2D_lvqlj")
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(250, 163)
+
+[connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
