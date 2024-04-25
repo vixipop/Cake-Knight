@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8seplkeggof5"
-path="res://.godot/imported/cakeCharacterWalk-Sheet.png-85f1f5493999bc3bd62c37684dc8af7c.ctex"
+uid="uid://fnaj5nyyubg3"
+path="res://.godot/imported/TemporaryMouse.png-15e873c6d46ee7d5606e331f7152e756.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cake assets/cakeCharacterWalk-Sheet.png"
-dest_files=["res://.godot/imported/cakeCharacterWalk-Sheet.png-85f1f5493999bc3bd62c37684dc8af7c.ctex"]
+source_file="res://assets/cake assets/TemporaryMouse.png"
+dest_files=["res://.godot/imported/TemporaryMouse.png-15e873c6d46ee7d5606e331f7152e756.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8seplkeggof5"
-path="res://.godot/imported/cakeCharacterWalk-Sheet.png-85f1f5493999bc3bd62c37684dc8af7c.ctex"
+uid="uid://bc3flul4clm1"
+path="res://.godot/imported/cakeCharacterDownattack.png-fffa06a71800634d5fedc4477ff20491.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cake assets/cakeCharacterWalk-Sheet.png"
-dest_files=["res://.godot/imported/cakeCharacterWalk-Sheet.png-85f1f5493999bc3bd62c37684dc8af7c.ctex"]
+source_file="res://assets/cake assets/cakeCharacterDownattack.png"
+dest_files=["res://.godot/imported/cakeCharacterDownattack.png-fffa06a71800634d5fedc4477ff20491.ctex"]
 
 [params]
 

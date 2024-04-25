@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4wcqq2mbic18"]
+[gd_scene load_steps=10 format=3 uid="uid://c4wcqq2mbic18"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_6oooa"]
 [ext_resource type="PackedScene" uid="uid://d4b828ww7tusw" path="res://scenes/player.tscn" id="2_21y34"]
 [ext_resource type="Texture2D" uid="uid://dirvrridkb7vq" path="res://icon.svg" id="3_kqwks"]
 [ext_resource type="Texture2D" uid="uid://tion0wbh3wdk" path="res://assets/cake assets/CakeTilesets.png" id="4_7jcqh"]
+[ext_resource type="PackedScene" uid="uid://b3gr3flqov48r" path="res://scenes/mouse.tscn" id="5_5qodi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ry6ev"]
 height = 564.0
@@ -855,5 +856,8 @@ position = Vector2(250, 163)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_se5us")
 format = 2
+
+[node name="Mouse" parent="." instance=ExtResource("5_5qodi")]
+position = Vector2(120, 64)
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
