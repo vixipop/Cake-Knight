@@ -8,15 +8,21 @@ radius = 3.16228
 [sub_resource type="CircleShape2D" id="CircleShape2D_6q8v6"]
 radius = 3.0
 
-[node name="Mouse" type="CharacterBody2D"]
+[node name="Mouse" type="CharacterBody2D" groups=["pogo"]]
 script = ExtResource("1_dwt6v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pkhdj")
+disabled = true
 
 [node name="MouseHitbox" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseHitbox"]
 shape = SubResource("CircleShape2D_6q8v6")
 
+[node name="PogoTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="area_entered" from="MouseHitbox" to="." method="_on_mouse_hitbox_area_entered"]
+[connection signal="timeout" from="PogoTimer" to="." method="_on_pogo_timer_timeout"]
