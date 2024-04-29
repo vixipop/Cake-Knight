@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvpqnhp60rlyk"]
+
+[ext_resource type="Texture2D" uid="uid://btmp64hd64de5" path="res://assets/cake assets/Fireball-Sheet.png" id="1_05m6s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vfd1"]
+radius = 44.3847
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3ko3"]
+atlas = ExtResource("1_05m6s")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c1p0"]
+atlas = ExtResource("1_05m6s")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0eesd"]
+atlas = ExtResource("1_05m6s")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogjr0"]
+atlas = ExtResource("1_05m6s")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up2fb"]
+atlas = ExtResource("1_05m6s")
+region = Rect2(1280, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6x8h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3ko3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c1p0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0eesd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogjr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up2fb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fireball" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4vfd1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r6x8h")
+frame_progress = 0.468764

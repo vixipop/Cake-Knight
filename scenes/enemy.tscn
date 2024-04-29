@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://bkp6dtjcnblui"]
+
+[ext_resource type="Texture2D" uid="uid://cgpd4o0d1arot" path="res://assets/cake assets/CandleEnemy-Sheet.png" id="1_ca36m"]
+[ext_resource type="Texture2D" uid="uid://cx7lmbrorf157" path="res://assets/cake assets/CandleEnemy.png" id="2_ni8ip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehwid"]
+atlas = ExtResource("1_ca36m")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wovm"]
+atlas = ExtResource("1_ca36m")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc7pq"]
+atlas = ExtResource("1_ca36m")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1e6t"]
+atlas = ExtResource("1_ca36m")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_825va"]
+atlas = ExtResource("1_ca36m")
+region = Rect2(1280, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgqc0"]
+atlas = ExtResource("1_ca36m")
+region = Rect2(1600, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s3fjp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehwid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wovm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc7pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1e6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_825va")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgqc0")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ni8ip")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6isp"]
+size = Vector2(161, 168)
+
+[node name="Enemy" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s3fjp")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -6)
+shape = SubResource("RectangleShape2D_q6isp")

@@ -33,7 +33,7 @@ func _physics_process(delta):
 	#player attack for all directions. a bit janky still.
 	#not sure if this should be its own function cause i havent learned how functions work yet
 	
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_just_pressed("attack"):
 		if cooldown: return
 		if Input.is_action_pressed("down"): 
 			attacking = true

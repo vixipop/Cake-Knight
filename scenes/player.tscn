@@ -1,10 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://d4b828ww7tusw"]
+[gd_scene load_steps=43 format=3 uid="uid://d4b828ww7tusw"]
 
 [ext_resource type="Texture2D" uid="uid://ce8jx5jfpg6h8" path="res://assets/cake assets/cakeCharacterFalling-Sheet.png" id="1_0f51c"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_p46mt"]
 [ext_resource type="Texture2D" uid="uid://bg25fuhgqv0wx" path="res://assets/cake assets/cakeCharacterIdle-Sheet.png" id="2_jb4lg"]
 [ext_resource type="Texture2D" uid="uid://d0i86t2v3fha3" path="res://assets/cake assets/cakeCharacterAttack-Sheet.png" id="2_r22ua"]
-[ext_resource type="Texture2D" uid="uid://bc3flul4clm1" path="res://assets/cake assets/cakeCharacterDownattack.png" id="3_oii71"]
+[ext_resource type="Texture2D" uid="uid://cfsvl4qw1alvd" path="res://assets/cake assets/cakeCharacterDownattack-Sheet.png" id="3_1sv7j"]
 [ext_resource type="Texture2D" uid="uid://dff71r77s1qbg" path="res://assets/cake assets/cakeCharacterJump-Sheet.png" id="3_ttup0"]
 [ext_resource type="Texture2D" uid="uid://c8seplkeggof5" path="res://assets/cake assets/cakeCharacterWalk-Sheet.png" id="4_aj3m0"]
 [ext_resource type="Texture2D" uid="uid://62kw0ab01yn7" path="res://assets/cake assets/cakeCharacterUpattack.png" id="7_rav4n"]
@@ -27,6 +27,22 @@ region = Rect2(1880, 0, 940, 320)
 [sub_resource type="AtlasTexture" id="AtlasTexture_758ho"]
 atlas = ExtResource("2_r22ua")
 region = Rect2(2820, 0, 940, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5h8y"]
+atlas = ExtResource("3_1sv7j")
+region = Rect2(0, 0, 320, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61w0v"]
+atlas = ExtResource("3_1sv7j")
+region = Rect2(320, 0, 320, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn1mi"]
+atlas = ExtResource("3_1sv7j")
+region = Rect2(640, 0, 320, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2qlg"]
+atlas = ExtResource("3_1sv7j")
+region = Rect2(960, 0, 320, 960)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t5684"]
 atlas = ExtResource("1_0f51c")
@@ -128,8 +144,17 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_oii71")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_f5h8y")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_61w0v")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_pn1mi")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_m2qlg")
 }],
 "loop": false,
 "name": &"down attack",
@@ -234,7 +259,7 @@ size = Vector2(78.5, 40)
 size = Vector2(38.5, 76)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqf5s"]
-size = Vector2(37, 72)
+size = Vector2(57, 76)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -250,8 +275,10 @@ shape = SubResource("RectangleShape2D_4nphq")
 position = Vector2(5.5, -19.5)
 scale = Vector2(0.215625, 0.215625)
 sprite_frames = SubResource("SpriteFrames_osiu0")
-animation = &"up attack"
+animation = &"down attack"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_bottom = 220
@@ -282,7 +309,7 @@ disabled = true
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DownAttack"]
-position = Vector2(0.5, 40)
+position = Vector2(1.5, 19)
 shape = SubResource("RectangleShape2D_jqf5s")
 disabled = true
 

@@ -25,7 +25,7 @@ func _on_pogo_timer_timeout():
 	pass
 	#bounce = true
 
-#part of an attempt to add a cooldown but it doesnt quite work
+#part of an attempt to add a cooldown but it doesnt quite workd
 func _on_mouse_hitbox_area_entered(area):
 	pass
 	#if area.name == "DownAttack":
